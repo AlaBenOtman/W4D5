@@ -26,17 +26,32 @@ def lc_subsum(list)
     sum = 0
     arr = []
     list.each_index do |i|
-        (i+1...list.length).each do |j|
-            if j != i 
-                arr << [list[i],list[j]]
-            end
+        tem = [list[i]]
+        (i+1...tem.length).each do |j|
+            tem << list[j]
         end
+        arr << tem 
     end
-    arr.each do |ele|
-        if ele[0] + ele[1] > sum 
-            sum = ele[0] + ele[1]
-        end
 
-    end
+    arr
+    # arr.each do |ele|
+    #     if ele[0] + ele[1] > sum 
+    #         sum = ele[0] + ele[1]
+    #     end
+
+    # end
+    # sum
+
+end
+
+def better_subsum(list)
+    curr_sum = 0
+    sum = 0
+    # (0...list.length-1).each do |i|
+    #     curr_sum = list[i] + list[i+1]
+    #     if curr_sum > sum 
+    #         sum = curr_sum
+    #     end
+    # end
     sum
 end
